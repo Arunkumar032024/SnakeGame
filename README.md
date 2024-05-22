@@ -7,3 +7,5 @@ Basic file setup
 To add favicon
 <br>
 Add user interface
+<br>
+Add music

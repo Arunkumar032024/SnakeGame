@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poetsen One", sans-serif;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F6FAB9;
+}
+.container{
+    padding-top: 1rem;
+}
+h1{
+    text-align: center;
+    margin: 1rem auto;
+    text-decoration: underline;
+}
+.display{
+    background-color: #8E3E63;
+    border: 5px solid #FF5F00;
+    border-radius: 5px;
+    height: 350px;
+    width: 350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+}
+.head{
+    background-color: #F6FAB9;
+}
+.food{
+    background-color: #C5FF95;
+}
+.buttons{
+    width: 50%;
+    max-width: 120px;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.buttons p:nth-child(2){
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button{
+    outline: none;
+    border: none;
+    background-color: #FF5F00;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.buttons button i{
+    color: #002379;
+    font-size: 1.125rem;
+}
+
+
+
+.food{
+    color: #C5FF95;
+}
+
+.snake{
+    background-color: #F6FAB9;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+}
+
+/* media query */
+@media (max-width: 333px) {
+    h1{
+        font-size: 1.413rem;
+    }
+    .display{
+        min-height: 95vw;
+    }
+}
+
