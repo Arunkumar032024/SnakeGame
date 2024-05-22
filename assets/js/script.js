@@ -4,10 +4,14 @@ $(document).ready(function () {
     const foodSound = new Audio("../music/food.mp3"),
     gameoverSound = new Audio("../music/gameover.mp3"),
     moveSound = new Audio("../music/move.mp3"),
-    musicSound = new Audio("../music/music.mp3");
+    musicSound = new Audio("../music/music.mp3"),
+    display = document.querySelector('.display');
     let speed = 2;
     let lastPaintTime = 0;
-    
+    let snakeArr = [
+        {x: 10, y: 10}
+    ],
+    food = {x: 15, y: 12};
 
     // Game function 
     function main(ctime){
@@ -21,8 +25,28 @@ $(document).ready(function () {
     }
 
     function gameEngine(){
-        // part 1: Updating teh snake array
-        // part 2: Render the snake and food
+        // part 1: Updating the snake array & Food
+
+        // part 2: Dispaly the snake and food
+        // Display the snake 
+        display.innerHTML = '';
+        snakeArr.forEach((e, i)=>{
+            snakeEle = document.createElement("div");
+            snakeEle.style.gridRowStart = e.y;
+            snakeEle.style.gridColumnStart = e.x;
+            if(i === 0){
+                snakeEle.classList.add("head")
+            }else{
+                snakeEle.classList.add("snake")
+            }
+            display.appendChild(snakeEle)
+        })
+        // Display the food 
+        foodEle = document.createElement("div");
+        foodEle.style.gridRowStart = food.y;
+        foodEle.style.gridColumnStart = food.x;
+        foodEle.classList.add("food")
+        display.appendChild(foodEle)
     }
 
 

@@ -9,3 +9,5 @@ To add favicon
 Add user interface
 <br>
 Add music
+<br>
+Add snake & food feature

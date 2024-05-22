@@ -26,11 +26,14 @@ h1{
     width: 350px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(18, 1fr);
-    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(19, 1fr);
 }
 .head{
-    background-color: #F6FAB9;
+    background-color: #f7ff82;
+}
+.snake{
+    background-color: #c3c86c;
 }
 .food{
     background-color: #C5FF95;
@@ -63,20 +66,6 @@ h1{
 }
 
 
-
-.food{
-    color: #C5FF95;
-}
-
-.snake{
-    background-color: #F6FAB9;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-}
 
 /* media query */
 @media (max-width: 333px) {
