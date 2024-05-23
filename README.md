@@ -11,3 +11,5 @@ Add user interface
 Add music
 <br>
 Add snake & food feature
+<br>
+Add move snake feature
