@@ -13,3 +13,5 @@ Add music
 Add snake & food feature
 <br>
 Add move snake feature
+<br>
+Add collide feature
