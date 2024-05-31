@@ -15,3 +15,5 @@ Add snake & food feature
 Add move snake feature
 <br>
 Add collide feature
+<br>
+Add Mobile screen navigation buttons

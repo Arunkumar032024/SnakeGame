@@ -12,9 +12,13 @@ $(document).ready(function(){
         {x: 13, y: 15}
     ];
     let food = {x: 6, y: 7};
+    // let status = true;
 
     // Game Functions
-    function main(ctime) {
+    function main(ctime, status) {
+        if(status){
+            return;
+        }
         window.requestAnimationFrame(main);
         if((ctime - lastPaintTime)/1000 < 1/speed){
             return;
@@ -31,10 +35,9 @@ $(document).ready(function(){
             }
         }
         // If you bump into the wall
-        if(snake[0].x >= 18 || snake[0].x <=0 || snake[0].y >= 18 || snake[0].y <=0){
+        if(snake[0].x >= 19 || snake[0].x <=0 || snake[0].y >= 19 || snake[0].y <=0 ){
             return true;
-        }
-            
+        }        
         return false;
     }
 
@@ -81,7 +84,6 @@ $(document).ready(function(){
             snakeElement = document.createElement('div');
             snakeElement.style.gridRowStart = e.y;
             snakeElement.style.gridColumnStart = e.x;
-    
             if(index === 0){
                 snakeElement.classList.add('head');
             }
@@ -95,9 +97,7 @@ $(document).ready(function(){
         foodElement.style.gridRowStart = food.y;
         foodElement.style.gridColumnStart = food.x;
         foodElement.classList.add('food')
-        $(".display").append(foodElement);
-    
-    
+        $(".display").append(foodElement);    
     }
     
     
@@ -108,25 +108,21 @@ $(document).ready(function(){
         moveSound.play();
         switch (e.key) {
             case "ArrowUp":
-                console.log("ArrowUp");
                 inputDir.x = 0;
                 inputDir.y = -1;
                 break;
     
             case "ArrowDown":
-                console.log("ArrowDown");
                 inputDir.x = 0;
                 inputDir.y = 1;
                 break;
     
             case "ArrowLeft":
-                console.log("ArrowLeft");
                 inputDir.x = -1;
                 inputDir.y = 0;
                 break;
     
             case "ArrowRight":
-                console.log("ArrowRight");
                 inputDir.x = 1;
                 inputDir.y = 0;
                 break;
@@ -142,37 +138,42 @@ $(document).ready(function(){
 
     // event perform on click play button
     $("#play").click(function () {
-        console.log("play")
         $(this).hide();
         $("#pause").show();
+        main(ctime, true);
     })
 
     // event perform on click pause button
     $("#pause").click(function () {
-        console.log("pause");
         $(this).hide();
         $("#play").show();
-        
+        main(ctime, false);
     })
 
     // event perform on click up button
     $("#up").click(function () {
         moveSound.play();
-        console.log("down")
+        inputDir.x = 0;
+        inputDir.y = -1;
     })
     // event perform on click down button
     $("#down").click(function () {
         moveSound.play();
-        console.log("down")
+        inputDir.x = 0;
+        inputDir.y = 1;
     })
     // event perform on click left button
     $("#left").click(function () {
-        console.log("left")
         moveSound.play();
+        inputDir.x = -1;
+        inputDir.y = 0;
+
+
     })
     // event perform on click right button
     $("#right").click(function () {
-        console.log("right")
         moveSound.play();
+        inputDir.x = 1;
+        inputDir.y = 0;
     })
 })
