@@ -8,7 +8,12 @@
 body{
     width: 100%;
     min-height: 100vh;
-    background-color: #F6FAB9;
+    /* background-color: #F6FAB9; */
+    background-image: url('../image/img.avif');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .container{
     padding-top: 1rem;
@@ -17,6 +22,7 @@ h1{
     text-align: center;
     margin: 1rem auto;
     text-decoration: underline;
+    color: #fff;
 }
 .display{
     background-color: #8E3E63;
@@ -66,11 +72,31 @@ h1{
     font-size: 1.125rem;
 }
 
+.score-box{
+    width: 350px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    color: #000;
+    font-size: 28px;
+    background-color: #ffffff60;
+    border-radius: 5px;
+}
+.score-box h4{
+    font-weight: 300;
+}
+.score-box p{
+    font-weight: 500;
+}
 
 
 
 /* media query */
 @media (max-width: 576px) {
+    .display{
+        margin: 0 auto;
+    }
     .buttons{
         display: flex;
     }
